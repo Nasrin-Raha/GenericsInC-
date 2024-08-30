@@ -1,0 +1,35 @@
+//Generic Methods
+
+using System;
+
+
+class GenericMethods<T>
+{
+    
+    public static void printMessage<T>(T message)
+    {
+        Console.WriteLine(message.ToString());
+    }
+    
+    
+    public static void printMessage<T>(T message, T prefix)
+    {
+        Console.WriteLine(prefix.ToString() + message.ToString());
+    }
+    
+    public static void printMessage<T>(T message, T prefix, T suffix)
+    {
+        Console.WriteLine(prefix.ToString() + message.ToString() + suffix.ToString());
+    }
+}
+
+
+public class MaincClass
+{
+    public static void Main(string[] args)
+    {
+        GenericMethods<string>.printMessage("Hi");
+        GenericMethods<int>.printMessage(2);
+        GenericMethods<bool>.printMessage(true);
+    }
+}
