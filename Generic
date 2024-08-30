@@ -1,0 +1,27 @@
+//Generics in c#
+
+
+using System;
+using System.Collections.Generic;
+
+class GenericPrinter<T>
+{
+    // Instance method to print the message
+    public void PrintMessage(T message)
+    {
+        Console.WriteLine(message.ToString());
+    }
+
+    public static void Main(string[] args)
+    {
+        // Creating instances of GenericPrinter with different type parameters
+        GenericPrinter<string> stringPrinter = new GenericPrinter<string>();
+        stringPrinter.PrintMessage("Hello, World!");
+
+        GenericPrinter<int> intPrinter = new GenericPrinter<int>();
+        intPrinter.PrintMessage(123);
+
+        GenericPrinter<double> doublePrinter = new GenericPrinter<double>();
+        doublePrinter.PrintMessage(123.45);
+    }
+}
